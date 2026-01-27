@@ -162,6 +162,10 @@ mkdir -p "$HOME/.config/zellij/layouts"
 link_file "$DOTFILES_DIR/zellij/config.kdl" "$HOME/.config/zellij/config.kdl"
 link_file "$DOTFILES_DIR/zellij/layouts/dev.kdl" "$HOME/.config/zellij/layouts/dev.kdl"
 
+# Yazi
+mkdir -p "$HOME/.config/yazi"
+link_file "$DOTFILES_DIR/yazi/yazi.toml" "$HOME/.config/yazi/yazi.toml"
+
 # ==============================================================================
 # Done
 # ==============================================================================
