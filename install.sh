@@ -35,6 +35,12 @@ brew_cask_installed() {
     brew list --cask 2>/dev/null | grep -q "^$1\$"
 }
 
+# Check if an app exists in /Applications
+app_exists() {
+    local app_name="$1"
+    [ -d "/Applications/${app_name}.app" ]
+}
+
 # Install brew formula if not installed
 install_formula() {
     local name="$1"
@@ -49,8 +55,12 @@ install_formula() {
 # Install brew cask if not installed
 install_cask() {
     local name="$1"
+    local app_name="${2:-}"
+
     if brew_cask_installed "$name"; then
         info "Already installed: $name (cask)"
+    elif [ -n "$app_name" ] && app_exists "$app_name"; then
+        info "Already installed: $name (manual)"
     else
         info "Installing: $name (cask)"
         brew install --cask "$name"
@@ -95,7 +105,7 @@ fi
 section "Installing dependencies"
 
 # Terminal
-install_cask "ghostty"
+install_cask "ghostty" "Ghostty"
 install_formula "zellij"
 
 # Font
@@ -104,7 +114,7 @@ install_cask "font-hack-nerd-font"
 # Development tools (used in zellij layout)
 install_formula "yazi"
 install_formula "lazygit"
-install_cask "claude-code"
+install_cask "claude-code" "Claude"
 
 # ==============================================================================
 # Install Oh My Zsh
