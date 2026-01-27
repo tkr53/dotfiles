@@ -113,3 +113,29 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH="$HOME/.local/bin:$PATH"
+
+# ==============================================================================
+# Aliases
+# ==============================================================================
+
+# Git
+alias g='git'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git pull'
+alias gd='git diff'
+alias gco='git checkout'
+alias gb='git branch'
+alias glog='git log --oneline --graph'
+
+# Directory
+alias ws='cd ~/workspace'
+
+# Tools
+alias zj='zellij'
+
+# Docker
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
