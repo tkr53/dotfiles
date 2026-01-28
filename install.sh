@@ -166,6 +166,20 @@ link_file "$DOTFILES_DIR/zellij/layouts/dev.kdl" "$HOME/.config/zellij/layouts/d
 mkdir -p "$HOME/.config/yazi"
 link_file "$DOTFILES_DIR/yazi/yazi.toml" "$HOME/.config/yazi/yazi.toml"
 
+# Claude Code
+mkdir -p "$HOME/.claude/rules" "$HOME/.claude/agents" "$HOME/.claude/commands"
+link_file "$DOTFILES_DIR/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+link_file "$DOTFILES_DIR/claude/settings.json" "$HOME/.claude/settings.json"
+for file in "$DOTFILES_DIR/claude/rules"/*.md; do
+    [ -f "$file" ] && link_file "$file" "$HOME/.claude/rules/$(basename "$file")"
+done
+for file in "$DOTFILES_DIR/claude/agents"/*.md; do
+    [ -f "$file" ] && link_file "$file" "$HOME/.claude/agents/$(basename "$file")"
+done
+for file in "$DOTFILES_DIR/claude/commands"/*.md; do
+    [ -f "$file" ] && link_file "$file" "$HOME/.claude/commands/$(basename "$file")"
+done
+
 # ==============================================================================
 # Done
 # ==============================================================================
