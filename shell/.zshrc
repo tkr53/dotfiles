@@ -139,3 +139,6 @@ alias zj='zellij'
 # Docker
 alias dcu='docker compose up -d'
 alias dcd='docker compose down'
+
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
