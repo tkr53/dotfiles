@@ -111,6 +111,9 @@ install_formula "zellij"
 # Font
 install_cask "font-hack-nerd-font"
 
+# Editor
+install_formula "neovim"
+
 # Development tools (used in zellij layout)
 install_formula "yazi"
 install_formula "lazygit"
@@ -167,6 +170,17 @@ done
 # Yazi
 mkdir -p "$HOME/.config/yazi"
 link_file "$DOTFILES_DIR/yazi/yazi.toml" "$HOME/.config/yazi/yazi.toml"
+
+# Neovim (LazyVim)
+mkdir -p "$HOME/.config/nvim/lua/config" "$HOME/.config/nvim/lua/plugins"
+link_file "$DOTFILES_DIR/nvim/init.lua" "$HOME/.config/nvim/init.lua"
+link_file "$DOTFILES_DIR/nvim/stylua.toml" "$HOME/.config/nvim/stylua.toml"
+for file in "$DOTFILES_DIR/nvim/lua/config"/*.lua; do
+    [ -f "$file" ] && link_file "$file" "$HOME/.config/nvim/lua/config/$(basename "$file")"
+done
+for file in "$DOTFILES_DIR/nvim/lua/plugins"/*.lua; do
+    [ -f "$file" ] && link_file "$file" "$HOME/.config/nvim/lua/plugins/$(basename "$file")"
+done
 
 # Claude Code
 mkdir -p "$HOME/.claude/rules" "$HOME/.claude/agents" "$HOME/.claude/commands"
