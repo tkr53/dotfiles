@@ -10,6 +10,7 @@ macOS 向けの dotfiles
 | Ghostty | `config` | Dracula テーマ、半透明背景 |
 | Zellij | `config.kdl` | カスタムキーバインド |
 | Zellij | `layouts/dev.kdl` | 開発用レイアウト (yazi + claude + lazygit) |
+| Neovim | `nvim/` | LazyVim ベース、隠しファイル表示 |
 
 ## インストール
 
@@ -26,6 +27,7 @@ install.sh が以下を自動インストールします:
 - **Homebrew**
 - **Ghostty** - ターミナルエミュレータ
 - **Zellij** - ターミナルマルチプレクサ
+- **Neovim** - エディタ (LazyVim)
 - **Hack Nerd Font** - フォント
 - **yazi** - ファイルマネージャー
 - **lazygit** - Git TUI
