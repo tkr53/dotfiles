@@ -160,7 +160,9 @@ link_file "$DOTFILES_DIR/ghostty/config" "$HOME/.config/ghostty/config"
 # Zellij
 mkdir -p "$HOME/.config/zellij/layouts"
 link_file "$DOTFILES_DIR/zellij/config.kdl" "$HOME/.config/zellij/config.kdl"
-link_file "$DOTFILES_DIR/zellij/layouts/dev.kdl" "$HOME/.config/zellij/layouts/dev.kdl"
+for file in "$DOTFILES_DIR/zellij/layouts"/*.kdl; do
+    [ -f "$file" ] && link_file "$file" "$HOME/.config/zellij/layouts/$(basename "$file")"
+done
 
 # Yazi
 mkdir -p "$HOME/.config/yazi"
