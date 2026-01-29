@@ -5,7 +5,7 @@ macOS 向けの dotfiles
 ## 含まれる設定
 
 | カテゴリ | 設定ファイル | 説明 |
-|----------|--------------|------|
+| --- | --- | --- |
 | Shell | `.zshrc` | Oh My Zsh + Powerlevel10k |
 | Ghostty | `config` | Dracula テーマ、半透明背景 |
 | Zellij | `config.kdl` | カスタムキーバインド |
