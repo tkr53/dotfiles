@@ -10,7 +10,7 @@ description: ブランチ作成→コミット→プッシュ→PR作成を一�
 ## 手順
 
 1. `git status` と `git diff --stat` と `git log --oneline -5` を並列実行し、現在の状態を把握する
-2. `.github/pull_request_template.md` が存在するか確認する（Readツールで読む）
+2. **【必須】** `.github/PULL_REQUEST_TEMPLATE.md`（大文字小文字の両パターン）が存在するかGlobで検索し、存在すればReadツールで内容を読む。このステップは絶対にスキップしないこと
 3. 変更内容を分析し、以下を決定する:
    - ブランチ名（Conventional Commits形式のプレフィックス: feature/, fix/, refactor/ など）
    - コミットメッセージ（Conventional Commits形式、日本語で体言止め）
@@ -29,8 +29,8 @@ description: ブランチ作成→コミット→プッシュ→PR作成を一�
 
 ## PRテンプレートの扱い
 
-- リポジトリルートから `.github/pull_request_template.md` を探す
-- テンプレートが存在する場合、そのセクション構成に従ってPR bodyを作成する
+- リポジトリルートから `.github/PULL_REQUEST_TEMPLATE.md` をGlobで探す（大文字小文字両方のパターンで検索）
+- テンプレートが存在する場合、**必ず**そのセクション構成に従ってPR bodyを作成する
 - テンプレート内のプレースホルダー（`***` や説明文）は変更内容に基づいて埋める
 - Jira Ticket等の情報が不明な場合はプレースホルダーのまま残す
 - テンプレートが存在しない場合は、デフォルトのSummary + Test plan形式を使う
